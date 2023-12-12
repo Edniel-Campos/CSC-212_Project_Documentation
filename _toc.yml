@@ -2,8 +2,24 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+root: index
+parts:
+  - caption: Setup
+    chapters:
+    - file: doc_files/setup_doc
+  - caption: Source Code Notes
+    chapters:
+    - file: doc_files/matrix_doc
+    - file: doc_files/node_doc
+    - file: doc_files/main_doc
+  - caption: Sample Matrices
+    chapters:
+    - file: doc_files/matrices_doc
+  - caption: Source Files
+    chapters:
+    - file: source_files/Matrix.h
+    - file: source_files/Matrix.cpp 
+    - file: source_files/Node.h 
+    - file: source_files/Node.cpp 
+    - file: source_files/main.cpp 
+
