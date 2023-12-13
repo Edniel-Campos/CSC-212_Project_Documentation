@@ -1,24 +1,25 @@
-#include "Matrix.h"
-#include <iomanip>
-#include <iostream>
-#include <sstream>
-#include <fstream>
-#include <string>
-
-/// @brief default constructor
+---
+file_format: mystnb
+kernelspec:
+  name: python3
+---
+# Matrix Methods
+default constructor
+```
 Matrix::Matrix() {
     this->row = 0;
     this->col = 0;
 }
-
-
-/// @brief constructor
+```
+constructor
+```
 Matrix::Matrix(int row, int col){
     this->row = row;
     this->col = col;
 }
-
-/// @brief destructor
+```
+destructor
+```
 void Matrix::create(int row, int col){
 
     for ( int x = 0; x < row ; x ++ ){ //sets the corresponding array of node pointers to nullptrs up to value of rows given
@@ -28,11 +29,12 @@ void Matrix::create(int row, int col){
     for(int j = 0; j < col; j++){
         this->first_col[j] = nullptr;
     }
-
 }
-/// @brief reads file and creates matrix
-/// @param fname file name
-/// @return void
+```
+reads file and creates matrix
+parameter: fname file name
+returns void
+```
 void Matrix::read_file(std::string fname) {
     int i = 0, j = 0;
     std::ifstream file(fname);
@@ -50,11 +52,13 @@ void Matrix::read_file(std::string fname) {
         i++;
     }
 }
-/// @brief adds node to matrix
-/// @param i row
-/// @param j column
-/// @param val value
-/// @return void
+```
+adds node to matrix
+parameter: i row
+parameter: j column
+parameter: val value
+returns void
+```
 void Matrix::add_node( int i, int j, int val){
     Node *a = new Node();
     (*a).data = val;
@@ -85,16 +89,20 @@ void Matrix::add_node( int i, int j, int val){
         current->next_row = a;
     }
 }
-/// @brief prints matrix
-/// @param low lowest value
-/// @param high highest value
-/// @return void
+```
+prints matrix
+parameter: low lowest value
+parameter: high highest value
+returns void
+```
 void Matrix::printzeros(int low, int high){
     for (int i=0; i < (high - low); i++) //prints the zeros based on the difference of hi and lo
         std::cout << std::setw(5) << 0;
 }
-/// @brief writes matrix
-/// @return void
+```
+writes matrix
+returns void
+```
 void Matrix::write(){
     for (int i=0; i < this->row; i++){
         Node *current = this->first_row[i];       //  Node pointer that points to the current corresponding pointer in the sparse matrix
@@ -112,11 +120,13 @@ void Matrix::write(){
         std::cout << std::endl;
     }
 }
-/// @brief adds two matrices
-/// @param B matrix
-/// @param C matrix
-/// @return 0 if failure
-/// @return 1 if success
+```
+adds two matrices
+parameter: B matrix
+parameter: C matrix
+returns 0 if failure
+returns 1 if success
+```
 int Matrix::add(Matrix B, Matrix &C) {
     if (this->row != B.row and this->col != B.col) {
         return 0;
@@ -152,11 +162,13 @@ int Matrix::add(Matrix B, Matrix &C) {
         return 1;
     }
 }
-/// @brief subtracts two matrices
-/// @param B matrix
-/// @param C matrix
-/// @return 0 if failure
-/// @return 1 if success
+```
+subtracts two matrices
+parameter: B matrix
+parameter: C matrix
+returns 0 if failure
+returns 1 if success
+```
 int Matrix::subtract(Matrix B, Matrix &C){
   if (this->row != B.row and this->col != B.col) {
     return 0;
@@ -194,11 +206,11 @@ int Matrix::subtract(Matrix B, Matrix &C){
     return 1;
   }
 }
-/// @brief multiplies two matrices
-/// @param B matrix
-/// @param C matrix
-/// @return 0 if failure
-/// @return 1 if success
+multiplies two matrices
+parameter: B matrix
+parameter: C matrix
+returns 0 if failure
+returns 1 if success
 int Matrix::multiply(Matrix B, Matrix &C){
     if(this->col != B.row){     //returns 0 if the rule doesn't apply
         return 0;
@@ -230,9 +242,11 @@ int Matrix::multiply(Matrix B, Matrix &C){
         return 1;
     }
 }
-/// @brief transposes matrix
-/// @param B matrix
-/// @return void
+```
+transposes matrix
+parameter: B matrix
+returns void
+```
 void Matrix::transpose(Matrix &B){
     for(int i = 0; i < this->row; i++) {
       Node *row_node = this->first_row[i];
@@ -246,3 +260,4 @@ void Matrix::transpose(Matrix &B){
       }
     }
 }
+```

@@ -23,6 +23,18 @@ Now that we have the executble, we need to execute it. You can use the ```./run 
 
 The matrices from the files that we provided in the executing command will be shown on the terminal and the program will be asking you what mathematical operation you would like to perform on the matrices shown. 
 
+```
+Matrix 1: 
+    6    0    2
+    0    0    3
+    0    2    0
+Matrix 2: 
+    2    0    0
+    1    0    1
+    0    1    0
+Multiply, Add, Subtract, or Transpose? (M or A or S or T):
+```
+
 You have a choice of multiplying, adding, subtracting, and transposing the matrices.
 
 To choose either of those operations, you will need to type in their respective character.
@@ -33,6 +45,13 @@ To subtract, you will need to type ```S```.
 To transpose, you will need to type ```T```.
 
 After typing in a character, it will print the resulting matrix on the terminal.
+
+```
+Resulting Matrix from Matrix Addition: 
+    8    0    2
+    1    0    4
+    0    3    0
+```
 
 If you want to try your own matrix, you can modify matrix files or create your own but you will have to provide the file name in the executing command.
 If you want to try our larger matrices, you can change the file names in the executing command to other file names that are provided in our source code.
