@@ -3,7 +3,21 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Setup
+    chapters:
+    - file: setup_doc
+  - caption: Sample Matrices
+    chapters:
+    - file: matrices_doc
+  - caption: Source Files
+    chapters:
+    - file: headers/Matrix_Header
+    - file: source/Matrix_Source
+    - file: headers/Node_Header 
+    - file: source/Node_Source
+    - file: main
+  - caption: More Info
+    chapters:
+    - file: more_info/report
+    
