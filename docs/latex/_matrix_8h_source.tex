@@ -1,0 +1,75 @@
+\doxysection{Matrix.\+h}
+\hypertarget{_matrix_8h_source}{}\label{_matrix_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MATRIX\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MATRIX\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Node.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_matrix}{Matrix}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ row,\ col;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}\ *first\_row[100];}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}\ *first\_col[100];}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_matrix_a2dba13c45127354c9f75ef576f49269b}{Matrix}}();\ \textcolor{comment}{//default\ constructor}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Constructor\ to\ set\ size\ of\ matrix}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_matrix_a2dba13c45127354c9f75ef576f49269b}{Matrix}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//simply\ just\ sets\ the\ Lists\ of\ Node*\ pointers\ to\ all\ nullptrs}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_matrix_aac3b00e90b55df193da96b4f56c4140e}{create}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Parameter:\ name\ of\ file\ to\ use\ (string)}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ reads\ from\ the\ files\ and\ all\ values\ that\ are\ not\ zero\ are}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ saved\ to\ the\ corresponding\ Matrix\ class.\ Lists\ of\ Linked\ Lists;}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_matrix_a7957ef3eac4028f6bc433d1b21c8112a}{read\_file}}(std::string\ fname);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Parameters\ requires\ two\ integers.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ used\ in\ member\ function:\ write().}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ Prints\ out\ a\ number\ of\ zeros\ based\ on\ the\ difference\ between\ the\ two\ parameters.\ */}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_matrix_aa1de248a0b8f2bb1e9632f129d239747}{printzeros}}(\textcolor{keywordtype}{int}\ lo,\ \textcolor{keywordtype}{int}\ hi);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Function\ to\ be\ called\ when\ the\ file\ stream\ object\ in\ read\ method\ which\ inserts\ a\ value\ that\ is\ not\ equal\ to\ zero.}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ \ \ \ Parameters\ require\ \ the\ row\ (i),\ column\ (j),\ and\ value\ (val)\ of\ the\ non-\/zero\ matrix\ Node.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ \ \ \ creates\ a\ node\ and\ stores\ the\ corresponding\ column,\ row,\ and\ value.\ It\ will\ set\ the\ two\ pointers\ in\ the\ node\ to\ nullptr.\ Then}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ traverses\ through\ matrix\ and\ finds\ the\ node\ pointer\ in\ the\ respective\ row\ and\ column\ and\ set\ the\ two\ internal\ node\ pointers\ to\ the\ newly\ created}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ node*/}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_matrix_a2244dd9f543f5998cea3d52e8c8bf8ed}{add\_node}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ val);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*No\ parameters\ required}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ The\ write()\ member\ function\ essentially\ just\ prints\ out\ the\ Sparse\ Matrix\ representation\ with\ the\ 0s}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ It\ has\ to\ loop\ through\ the\ num\ of\ rows\ and\ num\ of\ cols\ to\ be\ able\ to\ print\ out\ the\ 0,\ since\ 0s\ are\ not\ saved\ in\ the\ linked\ list\ for\ storage}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ std::setw\ is\ used\ to\ help\ for\ spacing\ in\ the\ console.*/}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_matrix_a511c491c5b29ca0a5318a07bf8ef24fc}{write}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Add\ Member\ Function\ adds\ the\ values\ of\ Matrix\ to\ the\ current\ Matrix\ object}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ Parameters:\ an\ instance\ of\ a\ Matrix\ object\ called\ B\ passed\ by\ value,\ and\ a\ reference\ to\ an\ empty\ Matrix\ C}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ they\ are\ the\ same\ and\ adds\ the\ nodes\ data\ to\ the\ corresponding\ positional\ node\ of\ the\ current\ Matrix*/}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_matrix_a627a324f026c9683d43dd701163a029c}{add}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ B,\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&C);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Add\ Member\ Function\ adds\ the\ values\ of\ Matrix\ to\ the\ current\ Matrix\ object}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ Parameters:\ an\ instance\ of\ a\ Matrix\ object\ called\ B}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ Loops\ through\ the\ Lists\ of\ Linked\ Lists\ by\ rows\ and\ checks\ the\ curr\ nodes\ corresponding\ col\ value\ to\ check\ if}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ they\ are\ the\ same\ and\ subtracts\ the\ nodes\ data\ to\ the\ corresponding\ positional\ node\ of\ the\ current\ Matrix*/}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_matrix_add2c598ac3b70b9a43565580bee798dd}{subtract}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ B,\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&C);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Multiplies\ two\ Matrices\ by\ having\ a\ new\ empty\ matrix\ created\ and\ appending\ the\ new\ nodes\ into\ Matrix\ C}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ Parameters:\ An\ existing\ Matrix\ object\ called\ B,\ Another\ Matrix\ object\ C\ passed\ by\ reference\ so\ we\ can\ add\ nodes\ into\ it\ after}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ the\ algorithm\ submits\ a\ new\ node*/}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_matrix_acfea33b427e5461fe3e1c5074642ca70}{multiply}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ B,\ \mbox{\hyperlink{class_matrix}{Matrix}}\ \&C);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Parameters:\ A\ Matrix\ object\ named\ B\ passed\ by\ reference.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ Loops\ through\ Lists\ of\ Linked\ Lists\ up\ until\ defined\ rows\ for\ class}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ When\ a\ node\ is\ given\ it\ will\ create\ a\ new\ node\ using\ B's\ add\_node\ method\ but\ use\ the\ curr}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ node's\ row,\ col\ public\ values\ and\ its\ actual\ value\ and\ place\ the\ row\ in\ the\ col\ param,\ col\ in\ the\ row\ param\ and\ value\ in\ the\ val\ param}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_matrix_a3d5ce87f3e72619d1b5212743136bdf8}{transpose}}(\mbox{\hyperlink{class_matrix}{Matrix}}\ \&B\ );}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//MATRIX\_H}}
+
+\end{DoxyCode}

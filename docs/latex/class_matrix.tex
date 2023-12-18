@@ -1,0 +1,211 @@
+\doxysection{Matrix Class Reference}
+\hypertarget{class_matrix}{}\label{class_matrix}\index{Matrix@{Matrix}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_matrix_a2dba13c45127354c9f75ef576f49269b}\label{class_matrix_a2dba13c45127354c9f75ef576f49269b} 
+{\bfseries Matrix} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\Hypertarget{class_matrix_a8babd004b9967f110b1627a3017ee0ab}\label{class_matrix_a8babd004b9967f110b1627a3017ee0ab} 
+{\bfseries Matrix} (int row, int col)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\Hypertarget{class_matrix_aac3b00e90b55df193da96b4f56c4140e}\label{class_matrix_aac3b00e90b55df193da96b4f56c4140e} 
+void {\bfseries create} (int row, int col)
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a7957ef3eac4028f6bc433d1b21c8112a}{read\+\_\+file}} (std\+::string fname)
+\begin{DoxyCompactList}\small\item\em reads file and creates matrix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_aa1de248a0b8f2bb1e9632f129d239747}{printzeros}} (int lo, int hi)
+\begin{DoxyCompactList}\small\item\em prints matrix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a2244dd9f543f5998cea3d52e8c8bf8ed}{add\+\_\+node}} (int i, int j, int val)
+\begin{DoxyCompactList}\small\item\em adds node to matrix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a511c491c5b29ca0a5318a07bf8ef24fc}{write}} ()
+\begin{DoxyCompactList}\small\item\em writes matrix \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_matrix_a627a324f026c9683d43dd701163a029c}{add}} (\mbox{\hyperlink{class_matrix}{Matrix}} B, \mbox{\hyperlink{class_matrix}{Matrix}} \&C)
+\begin{DoxyCompactList}\small\item\em adds two matrices \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_matrix_add2c598ac3b70b9a43565580bee798dd}{subtract}} (\mbox{\hyperlink{class_matrix}{Matrix}} B, \mbox{\hyperlink{class_matrix}{Matrix}} \&C)
+\begin{DoxyCompactList}\small\item\em subtracts two matrices \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_matrix_acfea33b427e5461fe3e1c5074642ca70}{multiply}} (\mbox{\hyperlink{class_matrix}{Matrix}} B, \mbox{\hyperlink{class_matrix}{Matrix}} \&C)
+\begin{DoxyCompactList}\small\item\em multiplies two matrices \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a3d5ce87f3e72619d1b5212743136bdf8}{transpose}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&B)
+\begin{DoxyCompactList}\small\item\em transposes matrix \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_matrix_a685f8e8daacc010c468d69d24d65f365}\label{class_matrix_a685f8e8daacc010c468d69d24d65f365} 
+int {\bfseries row}
+\item 
+\Hypertarget{class_matrix_a5e60ddb033e335e643b128d96f8d35ec}\label{class_matrix_a5e60ddb033e335e643b128d96f8d35ec} 
+int {\bfseries col}
+\item 
+\Hypertarget{class_matrix_a07db9feb32a205896acabb2ffe87badc}\label{class_matrix_a07db9feb32a205896acabb2ffe87badc} 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} {\bfseries first\+\_\+row} \mbox{[}100\mbox{]}
+\item 
+\Hypertarget{class_matrix_ab794085bcdfeb5454f5907a1f1878c58}\label{class_matrix_ab794085bcdfeb5454f5907a1f1878c58} 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} {\bfseries first\+\_\+col} \mbox{[}100\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_matrix_a627a324f026c9683d43dd701163a029c}\label{class_matrix_a627a324f026c9683d43dd701163a029c} 
+\index{Matrix@{Matrix}!add@{add}}
+\index{add@{add}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily int Matrix\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}}}]{B,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{C }\end{DoxyParamCaption})}
+
+
+
+adds two matrices 
+
+
+\begin{DoxyParams}{Parameters}
+{\em B} & matrix \\
+\hline
+{\em C} & matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if failure 
+
+1 if success 
+\end{DoxyReturn}
+\Hypertarget{class_matrix_a2244dd9f543f5998cea3d52e8c8bf8ed}\label{class_matrix_a2244dd9f543f5998cea3d52e8c8bf8ed} 
+\index{Matrix@{Matrix}!add\_node@{add\_node}}
+\index{add\_node@{add\_node}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{add\_node()}{add\_node()}}
+{\footnotesize\ttfamily void Matrix\+::add\+\_\+node (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+adds node to matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row \\
+\hline
+{\em j} & column \\
+\hline
+{\em val} & value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_matrix_acfea33b427e5461fe3e1c5074642ca70}\label{class_matrix_acfea33b427e5461fe3e1c5074642ca70} 
+\index{Matrix@{Matrix}!multiply@{multiply}}
+\index{multiply@{multiply}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily int Matrix\+::multiply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}}}]{B,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{C }\end{DoxyParamCaption})}
+
+
+
+multiplies two matrices 
+
+
+\begin{DoxyParams}{Parameters}
+{\em B} & matrix \\
+\hline
+{\em C} & matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if failure 
+
+1 if success 
+\end{DoxyReturn}
+\Hypertarget{class_matrix_aa1de248a0b8f2bb1e9632f129d239747}\label{class_matrix_aa1de248a0b8f2bb1e9632f129d239747} 
+\index{Matrix@{Matrix}!printzeros@{printzeros}}
+\index{printzeros@{printzeros}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{printzeros()}{printzeros()}}
+{\footnotesize\ttfamily void Matrix\+::printzeros (\begin{DoxyParamCaption}\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})}
+
+
+
+prints matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em low} & lowest value \\
+\hline
+{\em high} & highest value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_matrix_a7957ef3eac4028f6bc433d1b21c8112a}\label{class_matrix_a7957ef3eac4028f6bc433d1b21c8112a} 
+\index{Matrix@{Matrix}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily void Matrix\+::read\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{fname }\end{DoxyParamCaption})}
+
+
+
+reads file and creates matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & file name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_matrix_add2c598ac3b70b9a43565580bee798dd}\label{class_matrix_add2c598ac3b70b9a43565580bee798dd} 
+\index{Matrix@{Matrix}!subtract@{subtract}}
+\index{subtract@{subtract}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{subtract()}{subtract()}}
+{\footnotesize\ttfamily int Matrix\+::subtract (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}}}]{B,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{C }\end{DoxyParamCaption})}
+
+
+
+subtracts two matrices 
+
+
+\begin{DoxyParams}{Parameters}
+{\em B} & matrix \\
+\hline
+{\em C} & matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if failure 
+
+1 if success 
+\end{DoxyReturn}
+\Hypertarget{class_matrix_a3d5ce87f3e72619d1b5212743136bdf8}\label{class_matrix_a3d5ce87f3e72619d1b5212743136bdf8} 
+\index{Matrix@{Matrix}!transpose@{transpose}}
+\index{transpose@{transpose}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily void Matrix\+::transpose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{B }\end{DoxyParamCaption})}
+
+
+
+transposes matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em B} & matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_matrix_a511c491c5b29ca0a5318a07bf8ef24fc}\label{class_matrix_a511c491c5b29ca0a5318a07bf8ef24fc} 
+\index{Matrix@{Matrix}!write@{write}}
+\index{write@{write}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Matrix\+::write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+writes matrix 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Matrix.\+h\item 
+Matrix.\+cpp\end{DoxyCompactItemize}

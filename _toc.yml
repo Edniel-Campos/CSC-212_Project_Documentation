@@ -14,10 +14,12 @@ parts:
     chapters:
     - file: headers/Matrix_Header
     - file: source/Matrix_Source
-    - file: headers/Node_Header 
+    - file: headers/Node_Header
     - file: source/Node_Source
     - file: main
   - caption: More Info
     chapters:
     - file: more_info/report
-    
+  - caption: C++ Reference
+    chapters:
+    - file: source/cpp-reference
