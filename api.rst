@@ -1,5 +1,8 @@
-API Reference
-=============
+API documentation
+=================
 
-.. automodule:: my_project.my_module
-    :members:
+.. autosummary::
+   :toctree: _autosummary
+   :recursive:
+
+   my_module
